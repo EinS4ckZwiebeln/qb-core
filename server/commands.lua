@@ -188,7 +188,8 @@ QBCore.Commands.Add('car', Lang:t('command.car.help'), { { name = Lang:t('comman
 end, 'admin')
 
 QBCore.Commands.Add('dv', Lang:t('command.dv.help'), {}, false, function(source)
-    TriggerClientEvent('QBCore:Command:DeleteVehicle', source)
+    local vehicle = GetVehiclePedIsIn(GetPlayerPed(source), false)
+    if vehicle then DeleteEntity(vehicle) end
 end, 'admin')
 
 QBCore.Commands.Add('dvall', Lang:t('command.dvall.help'), {}, false, function()

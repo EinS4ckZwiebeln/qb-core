@@ -60,7 +60,7 @@ end
 
 function QBCore.Player.GetPlayerByLicense(license)
     if license then
-        local source = QBCore.Functions.GetSource(identifier)
+        local source = QBCore.Functions.GetSource(license)
         if source > 0 then
             return QBCore.Players[source]
         else
